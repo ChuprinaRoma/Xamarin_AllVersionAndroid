@@ -15,7 +15,8 @@
         </StackLayout>
         <Label StyleClass="title" Text="Что нового в этой версии" />
         <StackLayout>
-            <ListView x:Name="WhatsNewList" ItemsSource="{Binding WhatsNew}" SelectedItem="null">
+            <ListView x:Name="WhatsNewList" ItemsSource="{Binding WhatsNew}" SelectedItem="null" 
+                      HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
