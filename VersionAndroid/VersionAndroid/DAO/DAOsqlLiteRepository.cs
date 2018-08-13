@@ -27,9 +27,7 @@ namespace VersionAndroid.DAO
                 string databasePath = sQLite.GetDatabasePath("VersionDroids.db3");
                 database            = new SQLiteConnection(databasePath);
                 database.CreateTable<AndroidTable>();
-
-                database.Query<Models.AndroidTable>(
-                  "DELETE FROM Androids");
+                
             }
             catch (Exception)
             {
@@ -44,7 +42,6 @@ namespace VersionAndroid.DAO
             {
                 if (android == null)
                     throw new Exception();
-
                 AndroidTable droid = AndroidToDAOAndroid(android);
                 database.Insert(droid);
             }
