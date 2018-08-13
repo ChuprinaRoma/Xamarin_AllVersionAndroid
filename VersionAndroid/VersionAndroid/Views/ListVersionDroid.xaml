@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VersionAndroid"
+             x:Class="VersionAndroid.Views.ListVersionDroid">
+    <StackLayout>
+        <Label StyleClass="title" Text="Все версии Android" />
+        <ListView x:Name="androidList" ItemsSource="{Binding Androids}"
+                      ItemTapped="OnItemTapped" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout StyleClass="card">
+                                <Label StyleClass="text" Text="{Binding FullName}" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Обновить" Command="{Binding UpdateCommand}"/>
+    </StackLayout>
+</ContentPage>
